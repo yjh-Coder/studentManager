@@ -1,0 +1,1452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{124DDBC1-EFE4-42DE-BBF6-A68D2FE82AAE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>学籍成绩管理系统</RootNamespace>
+    <AssemblyName>学籍成绩管理系统</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.5.1.40\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="lib\css\bootstrap-theme.css.map" />
+    <Content Include="lib\css\bootstrap-theme.min.css.map" />
+    <Content Include="lib\css\bootstrap.css.map" />
+    <Content Include="lib\css\bootstrap.min.css.map" />
+    <Content Include="lib\js\jquery-1.11.0.js" />
+    <Content Include="lib\js\jquery-1.11.0.min.js" />
+    <Content Include="lib\js\jquery-1.4.2.js" />
+    <Content Include="lib\js\jquery-1.4.2.min.js" />
+    <Content Include="lib\js\jquery-1.8.3.js" />
+    <Content Include="lib\js\jquery-1.8.3.min.js" />
+    <Content Include="Login\About.aspx" />
+    <Content Include="Login\images\1.jpg" />
+    <Content Include="Login\images\10.jpg" />
+    <Content Include="Login\images\11.jpg" />
+    <Content Include="Login\images\2.jpg" />
+    <Content Include="Login\images\3.jpg" />
+    <Content Include="Login\images\4.jpg" />
+    <Content Include="Login\images\5.jpg" />
+    <Content Include="Login\images\6.jpg" />
+    <Content Include="Login\images\9.jpg" />
+    <Content Include="Login\images\banner1.png" />
+    <Content Include="Login\images\banner2.jpg" />
+    <Content Include="Login\images\courses\C++ Primer Plus.jpg" />
+    <Content Include="Login\images\courses\Hadoop.jpg" />
+    <Content Include="Login\images\courses\linux系统编程.jpg" />
+    <Content Include="Login\images\courses\Python编程从入门到实践.jpg" />
+    <Content Include="Login\images\courses\中国近代史纲要.jpg" />
+    <Content Include="Login\images\courses\大学物理.jpg" />
+    <Content Include="Login\images\courses\大学英语教程.jpg" />
+    <Content Include="Login\images\courses\大数据分析与应用.jpg" />
+    <Content Include="Login\images\courses\大数据导论.jpg" />
+    <Content Include="Login\images\courses\思想道德.jpg" />
+    <Content Include="Login\images\courses\数字逻辑.jpg" />
+    <Content Include="Login\images\courses\数据库系统概论.jpg" />
+    <Content Include="Login\images\courses\数据结构.jpg" />
+    <Content Include="Login\images\courses\毛泽东思想.jpg" />
+    <Content Include="Login\images\courses\汇编语言程序设计.jpg" />
+    <Content Include="Login\images\courses\离散数学.jpg" />
+    <Content Include="Login\images\courses\线性代数.jpg" />
+    <Content Include="Login\images\courses\计算机导论.jpg" />
+    <Content Include="Login\images\courses\计算机组成原理.jpg" />
+    <Content Include="Login\images\courses\软件工程导论.jpg" />
+    <Content Include="Login\images\courses\马克思主义基本原理.jpg" />
+    <Content Include="Login\images\courses\高等数学.jpg" />
+    <Content Include="Login\images\top-backcolor.png" />
+    <Content Include="Login\images\top-logo.png" />
+    <Content Include="Login\images\动漫1.jpg" />
+    <Content Include="Login\images\动漫2.jpg" />
+    <Content Include="Login\images\登录页面1.jpg" />
+    <Content Include="Login\images\系统2.jpg" />
+    <Content Include="Login\images\系统中心.jpg" />
+    <Content Include="Login\images\老师.jpg" />
+    <Content Include="Login\js\jquery-3.3.1.min.js" />
+    <Content Include="Login\js\jquery-ui.min.js" />
+    <Content Include="Login\layui\font\iconfont.eot" />
+    <Content Include="Login\layui\font\iconfont.ttf" />
+    <Content Include="Login\layui\font\iconfont.woff" />
+    <Content Include="Login\layui\font\iconfont.woff2" />
+    <Content Include="Login\mdialogjs\mdialog.css" />
+    <Content Include="Login\mdialogjs\mdialog.js" />
+    <Content Include="Login\mdialogjs\zepto.min.js" />
+    <Content Include="Login\register\css\style.css" />
+    <Content Include="Login\register\js\axios.js" />
+    <Content Include="Login\register\js\index.js" />
+    <Content Include="Login\register\js\vue.js" />
+    <Content Include="Login\sliderValidate\dist\sliderVerify\sliderVerify.js" />
+    <Content Include="Login\sliderValidate\index.html" />
+    <Content Include="Login\sliderValidate\layui\css\layui.css" />
+    <Content Include="Login\sliderValidate\layui\css\layui.mobile.css" />
+    <Content Include="Login\sliderValidate\layui\css\modules\code.css" />
+    <Content Include="Login\sliderValidate\layui\css\modules\laydate\default\font.css" />
+    <Content Include="Login\sliderValidate\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Login\sliderValidate\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Login\sliderValidate\layui\font\iconfont.svg" />
+    <Content Include="Login\sliderValidate\layui\images\face\0.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\1.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\10.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\11.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\12.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\13.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\14.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\15.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\16.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\17.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\18.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\19.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\2.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\20.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\21.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\22.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\23.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\24.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\25.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\26.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\27.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\28.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\29.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\3.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\30.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\31.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\32.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\33.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\34.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\35.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\36.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\37.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\38.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\39.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\4.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\40.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\41.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\42.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\43.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\44.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\45.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\46.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\47.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\48.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\49.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\5.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\50.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\51.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\52.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\53.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\54.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\55.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\56.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\57.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\58.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\59.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\6.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\60.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\61.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\62.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\63.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\64.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\65.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\66.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\67.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\68.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\69.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\7.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\70.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\71.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\8.gif" />
+    <Content Include="Login\sliderValidate\layui\images\face\9.gif" />
+    <Content Include="Login\sliderValidate\layui\layui.js" />
+    <Content Include="Login\sliderValidate\layui\lay\all-mobile.js" />
+    <Content Include="Login\sliderValidate\layui\lay\all.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\carousel.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\code.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\colorpicker.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\element.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\flow.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\form.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\jquery.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\laydate.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\layedit.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\layer.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\laypage.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\laytpl.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\mobile.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\mobile\layer-mobile.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\mobile\layim-mobile-open.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\mobile\upload-mobile.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\mobile\zepto.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\rate.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\slider.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\table.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\tree.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\upload.js" />
+    <Content Include="Login\sliderValidate\layui\lay\modules\util.js" />
+    <Content Include="Login\sliderValidate\src\sliderVerify\sliderVerify.js" />
+    <Content Include="Login\sweetalert\sweetalert-dev.js" />
+    <Content Include="Login\sweetalert\sweetalert.css" />
+    <Content Include="Login\timeline\time.css" />
+    <Content Include="main2.aspx" />
+    <Content Include="main\Course_Info.aspx" />
+    <Content Include="main\css\main.css" />
+    <Content Include="main\images\1581092764-1_b_1.jpg" />
+    <Content Include="main\images\1581689124-1_b_1.jpg" />
+    <Content Include="main\images\23348750-1_b_2.jpg" />
+    <Content Include="main\images\23460699-1_b_2.jpg" />
+    <Content Include="main\images\23549233-1_b_1.jpg" />
+    <Content Include="main\images\23955035-1_b_6.jpg" />
+    <Content Include="main\images\24003310-1_b_7.jpg" />
+    <Content Include="main\images\24021200-1_b_5.jpg" />
+    <Content Include="main\images\24175222-1_b_1.jpg" />
+    <Content Include="main\images\25205800-1_b_2.jpg" />
+    <Content Include="main\images\25205830-1_b_1.jpg" />
+    <Content Include="main\images\25314016-1_b_3.jpg" />
+    <Content Include="main\images\25314778-1_b_2.jpg" />
+    <Content Include="main\images\25332980-1_b_5.jpg" />
+    <Content Include="main\images\25337331-1_b_5.jpg" />
+    <Content Include="main\images\27939063-1_b_3.jpg" />
+    <Content Include="main\images\27941792-1_b_3.jpg" />
+    <Content Include="main\images\28999901-1_b_3.gif" />
+    <Content Include="main\images\410271770-1_b_1.jpg" />
+    <Content Include="main\images\blue.png" />
+    <Content Include="main\images\foot.jpg" />
+    <Content Include="main\images\ga38.png" />
+    <Content Include="main\images\head.png" />
+    <Content Include="main\images\head_bgc.png" />
+    <Content Include="main\images\lb_1.jpg" />
+    <Content Include="main\images\lb_2.jpg" />
+    <Content Include="main\images\lb_3.jpg" />
+    <Content Include="main\images\link-1.png" />
+    <Content Include="main\images\link-2.png" />
+    <Content Include="main\images\link-3.png" />
+    <Content Include="main\images\link-4.png" />
+    <Content Include="main\images\logo-bg.jpg" />
+    <Content Include="main\layui\css\layui.css" />
+    <Content Include="main\layui\css\layui.mobile.css" />
+    <Content Include="main\layui\css\modules\code.css" />
+    <Content Include="main\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="main\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="main\layui\css\modules\layer\default\icon.png" />
+    <Content Include="main\layui\css\modules\layer\default\layer.css" />
+    <Content Include="main\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="main\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="main\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="main\layui\font\iconfont.svg" />
+    <Content Include="main\layui\images\face\0.gif" />
+    <Content Include="main\layui\images\face\1.gif" />
+    <Content Include="main\layui\images\face\10.gif" />
+    <Content Include="main\layui\images\face\11.gif" />
+    <Content Include="main\layui\images\face\12.gif" />
+    <Content Include="main\layui\images\face\13.gif" />
+    <Content Include="main\layui\images\face\14.gif" />
+    <Content Include="main\layui\images\face\15.gif" />
+    <Content Include="main\layui\images\face\16.gif" />
+    <Content Include="main\layui\images\face\17.gif" />
+    <Content Include="main\layui\images\face\18.gif" />
+    <Content Include="main\layui\images\face\19.gif" />
+    <Content Include="main\layui\images\face\2.gif" />
+    <Content Include="main\layui\images\face\20.gif" />
+    <Content Include="main\layui\images\face\21.gif" />
+    <Content Include="main\layui\images\face\22.gif" />
+    <Content Include="main\layui\images\face\23.gif" />
+    <Content Include="main\layui\images\face\24.gif" />
+    <Content Include="main\layui\images\face\25.gif" />
+    <Content Include="main\layui\images\face\26.gif" />
+    <Content Include="main\layui\images\face\27.gif" />
+    <Content Include="main\layui\images\face\28.gif" />
+    <Content Include="main\layui\images\face\29.gif" />
+    <Content Include="main\layui\images\face\3.gif" />
+    <Content Include="main\layui\images\face\30.gif" />
+    <Content Include="main\layui\images\face\31.gif" />
+    <Content Include="main\layui\images\face\32.gif" />
+    <Content Include="main\layui\images\face\33.gif" />
+    <Content Include="main\layui\images\face\34.gif" />
+    <Content Include="main\layui\images\face\35.gif" />
+    <Content Include="main\layui\images\face\36.gif" />
+    <Content Include="main\layui\images\face\37.gif" />
+    <Content Include="main\layui\images\face\38.gif" />
+    <Content Include="main\layui\images\face\39.gif" />
+    <Content Include="main\layui\images\face\4.gif" />
+    <Content Include="main\layui\images\face\40.gif" />
+    <Content Include="main\layui\images\face\41.gif" />
+    <Content Include="main\layui\images\face\42.gif" />
+    <Content Include="main\layui\images\face\43.gif" />
+    <Content Include="main\layui\images\face\44.gif" />
+    <Content Include="main\layui\images\face\45.gif" />
+    <Content Include="main\layui\images\face\46.gif" />
+    <Content Include="main\layui\images\face\47.gif" />
+    <Content Include="main\layui\images\face\48.gif" />
+    <Content Include="main\layui\images\face\49.gif" />
+    <Content Include="main\layui\images\face\5.gif" />
+    <Content Include="main\layui\images\face\50.gif" />
+    <Content Include="main\layui\images\face\51.gif" />
+    <Content Include="main\layui\images\face\52.gif" />
+    <Content Include="main\layui\images\face\53.gif" />
+    <Content Include="main\layui\images\face\54.gif" />
+    <Content Include="main\layui\images\face\55.gif" />
+    <Content Include="main\layui\images\face\56.gif" />
+    <Content Include="main\layui\images\face\57.gif" />
+    <Content Include="main\layui\images\face\58.gif" />
+    <Content Include="main\layui\images\face\59.gif" />
+    <Content Include="main\layui\images\face\6.gif" />
+    <Content Include="main\layui\images\face\60.gif" />
+    <Content Include="main\layui\images\face\61.gif" />
+    <Content Include="main\layui\images\face\62.gif" />
+    <Content Include="main\layui\images\face\63.gif" />
+    <Content Include="main\layui\images\face\64.gif" />
+    <Content Include="main\layui\images\face\65.gif" />
+    <Content Include="main\layui\images\face\66.gif" />
+    <Content Include="main\layui\images\face\67.gif" />
+    <Content Include="main\layui\images\face\68.gif" />
+    <Content Include="main\layui\images\face\69.gif" />
+    <Content Include="main\layui\images\face\7.gif" />
+    <Content Include="main\layui\images\face\70.gif" />
+    <Content Include="main\layui\images\face\71.gif" />
+    <Content Include="main\layui\images\face\8.gif" />
+    <Content Include="main\layui\images\face\9.gif" />
+    <Content Include="main\layui\layui-v2.5.6\免责声明.txt" />
+    <Content Include="main\layui\layui.all.js" />
+    <Content Include="main\layui\layui.js" />
+    <Content Include="main\layui\lay\modules\carousel.js" />
+    <Content Include="main\layui\lay\modules\code.js" />
+    <Content Include="main\layui\lay\modules\colorpicker.js" />
+    <Content Include="main\layui\lay\modules\element.js" />
+    <Content Include="main\layui\lay\modules\flow.js" />
+    <Content Include="main\layui\lay\modules\form.js" />
+    <Content Include="main\layui\lay\modules\jquery.js" />
+    <Content Include="main\layui\lay\modules\laydate.js" />
+    <Content Include="main\layui\lay\modules\layedit.js" />
+    <Content Include="main\layui\lay\modules\layer.js" />
+    <Content Include="main\layui\lay\modules\laypage.js" />
+    <Content Include="main\layui\lay\modules\laytpl.js" />
+    <Content Include="main\layui\lay\modules\mobile.js" />
+    <Content Include="main\layui\lay\modules\rate.js" />
+    <Content Include="main\layui\lay\modules\slider.js" />
+    <Content Include="main\layui\lay\modules\table.js" />
+    <Content Include="main\layui\lay\modules\transfer.js" />
+    <Content Include="main\layui\lay\modules\tree.js" />
+    <Content Include="main\layui\lay\modules\upload.js" />
+    <Content Include="main\layui\lay\modules\util.js" />
+    <Content Include="main\main.aspx" />
+    <Content Include="manager\add_course.aspx" />
+    <Content Include="manager\add_student.aspx" />
+    <Content Include="manager\add_teacher.aspx" />
+    <Content Include="manager\all_courses.aspx" />
+    <Content Include="manager\course_manager.aspx" />
+    <Content Include="manager\detail_course.aspx" />
+    <Content Include="manager\detail_student.aspx" />
+    <Content Include="manager\detail_teacher.aspx" />
+    <Content Include="manager\distribute.aspx" />
+    <Content Include="manager\distribute_course.aspx" />
+    <Content Include="manager\dist\distlayui.js" />
+    <Content Include="manager\edit_course.aspx" />
+    <Content Include="manager\Edit_Personal_Information.aspx" />
+    <Content Include="manager\edit_student.aspx" />
+    <Content Include="manager\edit_teacher.aspx" />
+    <Content Include="manager\imgs\C++ Primer Plus.jpg" />
+    <Content Include="manager\imgs\c语言程序设计.jpg" />
+    <Content Include="manager\imgs\C语言程序设计现代方法.jpg" />
+    <Content Include="manager\imgs\Hadoop.jpg" />
+    <Content Include="manager\imgs\java核心技术%28卷一%29.jpg" />
+    <Content Include="manager\imgs\linux系统编程.jpg" />
+    <Content Include="manager\imgs\Python编程从入门到实践.jpg" />
+    <Content Include="manager\imgs\Windows程序设计.jpg" />
+    <Content Include="manager\imgs\中国近代史纲要.jpg" />
+    <Content Include="manager\imgs\人生风险.jpg" />
+    <Content Include="manager\imgs\信息安全前沿技术.jpg" />
+    <Content Include="manager\imgs\军事理论与训练.jpg" />
+    <Content Include="manager\imgs\大学体育.jpg" />
+    <Content Include="manager\imgs\大学物理.jpg" />
+    <Content Include="manager\imgs\大学生心理健康.jpg" />
+    <Content Include="manager\imgs\大学英语%281%29.jpg" />
+    <Content Include="manager\imgs\大学英语%282%29.jpg" />
+    <Content Include="manager\imgs\大学英语%283%29.jpg" />
+    <Content Include="manager\imgs\大学英语%284%29.jpg" />
+    <Content Include="manager\imgs\大学英语教程.jpg" />
+    <Content Include="manager\imgs\大数据分析与应用.jpg" />
+    <Content Include="manager\imgs\大数据导论.jpg" />
+    <Content Include="manager\imgs\念念有词 考研英语词组.jpg" />
+    <Content Include="manager\imgs\思想道德.jpg" />
+    <Content Include="manager\imgs\托福考试官方指南.jpg" />
+    <Content Include="manager\imgs\数字逻辑.jpg" />
+    <Content Include="manager\imgs\数据库系统概论.jpg" />
+    <Content Include="manager\imgs\数据结构.jpg" />
+    <Content Include="manager\imgs\机械设计.jpg" />
+    <Content Include="manager\imgs\概率论与数理统计.jpg" />
+    <Content Include="manager\imgs\毛泽东思想.jpg" />
+    <Content Include="manager\imgs\汇编语言程序设计.jpg" />
+    <Content Include="manager\imgs\深入理解java虚拟机.jpg" />
+    <Content Include="manager\imgs\离散数学.jpg" />
+    <Content Include="manager\imgs\线性代数.jpg" />
+    <Content Include="manager\imgs\计算机导论.jpg" />
+    <Content Include="manager\imgs\计算机组成原理.jpg" />
+    <Content Include="manager\imgs\软件工程导论.jpg" />
+    <Content Include="manager\imgs\飞镖.jpg" />
+    <Content Include="manager\imgs\马克思主义基本原理.jpg" />
+    <Content Include="manager\imgs\高等数学.jpg" />
+    <Content Include="manager\layui\admin.css" />
+    <Content Include="manager\layui\font\iconfont.eot" />
+    <Content Include="manager\layui\font\iconfont.ttf" />
+    <Content Include="manager\layui\font\iconfont.woff" />
+    <Content Include="manager\layui\font\iconfont.woff2" />
+    <Content Include="Login\sliderValidate\.project" />
+    <Content Include="Login\sliderValidate\layui\font\iconfont.eot" />
+    <Content Include="Login\sliderValidate\layui\font\iconfont.ttf" />
+    <Content Include="Login\sliderValidate\layui\font\iconfont.woff" />
+    <Content Include="Login\sliderValidate\LICENSE" />
+    <Content Include="Login\sliderValidate\README.md" />
+    <Content Include="manager\layui\template.css" />
+    <Content Include="manager\lib\list.js" />
+    <Content Include="manager\Manager.aspx" />
+    <Content Include="manager\system_switch.aspx" />
+    <Content Include="student\lib\build\css\app.css" />
+    <Content Include="student\lib\build\css\doc.css" />
+    <Content Include="student\lib\build\css\message.css" />
+    <Content Include="student\lib\build\css\nprogress.css" />
+    <Content Include="student\lib\build\css\themes\blue.css" />
+    <Content Include="student\lib\build\css\themes\light.css" />
+    <Content Include="student\lib\build\js\app.js" />
+    <Content Include="student\lib\build\js\loader.js" />
+    <Content Include="student\lib\build\js\message.js" />
+    <Content Include="student\lib\build\js\navbar.js" />
+    <Content Include="student\lib\build\js\nprogress.js" />
+    <Content Include="student\lib\build\js\onelevel.js" />
+    <Content Include="student\lib\build\js\pjax.js" />
+    <Content Include="student\lib\build\js\tab.js" />
+    <Content Include="student\lib\list.js" />
+    <Content Include="student\Student.aspx" />
+    <Content Include="manager\Student_Manage.aspx" />
+    <Content Include="manager\Teacher.aspx" />
+    <Content Include="manager\teacher_manage.aspx" />
+    <Content Include="manager\teaching.aspx" />
+    <Content Include="Scripts\layui\css\layui.css" />
+    <Content Include="Scripts\layui\css\layui.mobile.css" />
+    <Content Include="Scripts\layui\css\modules\code.css" />
+    <Content Include="Scripts\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Scripts\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\layui\font\iconfont.svg" />
+    <Content Include="Scripts\layui\images\face\0.gif" />
+    <Content Include="Scripts\layui\images\face\1.gif" />
+    <Content Include="Scripts\layui\images\face\10.gif" />
+    <Content Include="Scripts\layui\images\face\11.gif" />
+    <Content Include="Scripts\layui\images\face\12.gif" />
+    <Content Include="Scripts\layui\images\face\13.gif" />
+    <Content Include="Scripts\layui\images\face\14.gif" />
+    <Content Include="Scripts\layui\images\face\15.gif" />
+    <Content Include="Scripts\layui\images\face\16.gif" />
+    <Content Include="Scripts\layui\images\face\17.gif" />
+    <Content Include="Scripts\layui\images\face\18.gif" />
+    <Content Include="Scripts\layui\images\face\19.gif" />
+    <Content Include="Scripts\layui\images\face\2.gif" />
+    <Content Include="Scripts\layui\images\face\20.gif" />
+    <Content Include="Scripts\layui\images\face\21.gif" />
+    <Content Include="Scripts\layui\images\face\22.gif" />
+    <Content Include="Scripts\layui\images\face\23.gif" />
+    <Content Include="Scripts\layui\images\face\24.gif" />
+    <Content Include="Scripts\layui\images\face\25.gif" />
+    <Content Include="Scripts\layui\images\face\26.gif" />
+    <Content Include="Scripts\layui\images\face\27.gif" />
+    <Content Include="Scripts\layui\images\face\28.gif" />
+    <Content Include="Scripts\layui\images\face\29.gif" />
+    <Content Include="Scripts\layui\images\face\3.gif" />
+    <Content Include="Scripts\layui\images\face\30.gif" />
+    <Content Include="Scripts\layui\images\face\31.gif" />
+    <Content Include="Scripts\layui\images\face\32.gif" />
+    <Content Include="Scripts\layui\images\face\33.gif" />
+    <Content Include="Scripts\layui\images\face\34.gif" />
+    <Content Include="Scripts\layui\images\face\35.gif" />
+    <Content Include="Scripts\layui\images\face\36.gif" />
+    <Content Include="Scripts\layui\images\face\37.gif" />
+    <Content Include="Scripts\layui\images\face\38.gif" />
+    <Content Include="Scripts\layui\images\face\39.gif" />
+    <Content Include="Scripts\layui\images\face\4.gif" />
+    <Content Include="Scripts\layui\images\face\40.gif" />
+    <Content Include="Scripts\layui\images\face\41.gif" />
+    <Content Include="Scripts\layui\images\face\42.gif" />
+    <Content Include="Scripts\layui\images\face\43.gif" />
+    <Content Include="Scripts\layui\images\face\44.gif" />
+    <Content Include="Scripts\layui\images\face\45.gif" />
+    <Content Include="Scripts\layui\images\face\46.gif" />
+    <Content Include="Scripts\layui\images\face\47.gif" />
+    <Content Include="Scripts\layui\images\face\48.gif" />
+    <Content Include="Scripts\layui\images\face\49.gif" />
+    <Content Include="Scripts\layui\images\face\5.gif" />
+    <Content Include="Scripts\layui\images\face\50.gif" />
+    <Content Include="Scripts\layui\images\face\51.gif" />
+    <Content Include="Scripts\layui\images\face\52.gif" />
+    <Content Include="Scripts\layui\images\face\53.gif" />
+    <Content Include="Scripts\layui\images\face\54.gif" />
+    <Content Include="Scripts\layui\images\face\55.gif" />
+    <Content Include="Scripts\layui\images\face\56.gif" />
+    <Content Include="Scripts\layui\images\face\57.gif" />
+    <Content Include="Scripts\layui\images\face\58.gif" />
+    <Content Include="Scripts\layui\images\face\59.gif" />
+    <Content Include="Scripts\layui\images\face\6.gif" />
+    <Content Include="Scripts\layui\images\face\60.gif" />
+    <Content Include="Scripts\layui\images\face\61.gif" />
+    <Content Include="Scripts\layui\images\face\62.gif" />
+    <Content Include="Scripts\layui\images\face\63.gif" />
+    <Content Include="Scripts\layui\images\face\64.gif" />
+    <Content Include="Scripts\layui\images\face\65.gif" />
+    <Content Include="Scripts\layui\images\face\66.gif" />
+    <Content Include="Scripts\layui\images\face\67.gif" />
+    <Content Include="Scripts\layui\images\face\68.gif" />
+    <Content Include="Scripts\layui\images\face\69.gif" />
+    <Content Include="Scripts\layui\images\face\7.gif" />
+    <Content Include="Scripts\layui\images\face\70.gif" />
+    <Content Include="Scripts\layui\images\face\71.gif" />
+    <Content Include="Scripts\layui\images\face\8.gif" />
+    <Content Include="Scripts\layui\images\face\9.gif" />
+    <Content Include="Scripts\layui\layui.all.js" />
+    <Content Include="Scripts\layui\layui.js" />
+    <Content Include="Scripts\layui\lay\modules\carousel.js" />
+    <Content Include="Scripts\layui\lay\modules\code.js" />
+    <Content Include="Scripts\layui\lay\modules\colorpicker.js" />
+    <Content Include="Scripts\layui\lay\modules\element.js" />
+    <Content Include="Scripts\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\layui\lay\modules\form.js" />
+    <Content Include="Scripts\layui\lay\modules\jquery.js" />
+    <Content Include="Scripts\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\layui\lay\modules\mobile.js" />
+    <Content Include="Scripts\layui\lay\modules\rate.js" />
+    <Content Include="Scripts\layui\lay\modules\slider.js" />
+    <Content Include="Scripts\layui\lay\modules\table.js" />
+    <Content Include="Scripts\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\layui\lay\modules\util.js" />
+    <Content Include="static\css\1.css" />
+    <Content Include="Manager.Master" />
+    <Content Include="manager\edit_course.ashx" />
+    <Content Include="manager\add_course.ashx" />
+    <Content Include="manager\del_course.ashx" />
+    <Content Include="main\layui\font\iconfont.eot" />
+    <Content Include="main\layui\font\iconfont.ttf" />
+    <Content Include="main\layui\font\iconfont.woff" />
+    <Content Include="main\layui\font\iconfont.woff2" />
+    <Content Include="main\layui\layui-v2.5.6\文档与示例\Gitee 码云.url" />
+    <Content Include="main\layui\layui-v2.5.6\文档与示例\GitHub.url" />
+    <Content Include="main\layui\layui-v2.5.6\文档与示例\在线示例.url" />
+    <Content Include="main\layui\layui-v2.5.6\文档与示例\快速上手.url" />
+    <Content Include="main\layui\layui-v2.5.6\更新日志.url" />
+    <Content Include="manager\exit.ashx" />
+    <Content Include="manager\add_student.ashx" />
+    <Content Include="manager\add_teacher.ashx" />
+    <Content Include="manager\del_course_many.ashx" />
+    <Content Include="manager\del_student.ashx" />
+    <Content Include="manager\del_student_many.ashx" />
+    <Content Include="manager\del_teacher.ashx" />
+    <Content Include="manager\del_teacher_many.ashx" />
+    <Content Include="manager\edit_student.ashx" />
+    <Content Include="manager\edit_teacher.ashx" />
+    <Content Include="manager\distribute_course.ashx" />
+    <Content Include="manager\save_switch.ashx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="lib\css\bootstrap-theme.css" />
+    <Content Include="lib\css\bootstrap-theme.min.css" />
+    <Content Include="lib\css\bootstrap.css" />
+    <Content Include="lib\css\bootstrap.min.css" />
+    <Content Include="lib\js\jquery-3.3.1.min.js" />
+    <Content Include="lib\js\jquery-ui.min.js" />
+    <Content Include="Login\layui\css\layui.css" />
+    <Content Include="Login\layui\css\layui.mobile.css" />
+    <Content Include="Login\layui\css\modules\code.css" />
+    <Content Include="Login\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Login\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Login\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Login\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Login\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Login\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Login\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Login\layui\font\iconfont.svg" />
+    <Content Include="Login\layui\images\face\0.gif" />
+    <Content Include="Login\layui\images\face\1.gif" />
+    <Content Include="Login\layui\images\face\10.gif" />
+    <Content Include="Login\layui\images\face\11.gif" />
+    <Content Include="Login\layui\images\face\12.gif" />
+    <Content Include="Login\layui\images\face\13.gif" />
+    <Content Include="Login\layui\images\face\14.gif" />
+    <Content Include="Login\layui\images\face\15.gif" />
+    <Content Include="Login\layui\images\face\16.gif" />
+    <Content Include="Login\layui\images\face\17.gif" />
+    <Content Include="Login\layui\images\face\18.gif" />
+    <Content Include="Login\layui\images\face\19.gif" />
+    <Content Include="Login\layui\images\face\2.gif" />
+    <Content Include="Login\layui\images\face\20.gif" />
+    <Content Include="Login\layui\images\face\21.gif" />
+    <Content Include="Login\layui\images\face\22.gif" />
+    <Content Include="Login\layui\images\face\23.gif" />
+    <Content Include="Login\layui\images\face\24.gif" />
+    <Content Include="Login\layui\images\face\25.gif" />
+    <Content Include="Login\layui\images\face\26.gif" />
+    <Content Include="Login\layui\images\face\27.gif" />
+    <Content Include="Login\layui\images\face\28.gif" />
+    <Content Include="Login\layui\images\face\29.gif" />
+    <Content Include="Login\layui\images\face\3.gif" />
+    <Content Include="Login\layui\images\face\30.gif" />
+    <Content Include="Login\layui\images\face\31.gif" />
+    <Content Include="Login\layui\images\face\32.gif" />
+    <Content Include="Login\layui\images\face\33.gif" />
+    <Content Include="Login\layui\images\face\34.gif" />
+    <Content Include="Login\layui\images\face\35.gif" />
+    <Content Include="Login\layui\images\face\36.gif" />
+    <Content Include="Login\layui\images\face\37.gif" />
+    <Content Include="Login\layui\images\face\38.gif" />
+    <Content Include="Login\layui\images\face\39.gif" />
+    <Content Include="Login\layui\images\face\4.gif" />
+    <Content Include="Login\layui\images\face\40.gif" />
+    <Content Include="Login\layui\images\face\41.gif" />
+    <Content Include="Login\layui\images\face\42.gif" />
+    <Content Include="Login\layui\images\face\43.gif" />
+    <Content Include="Login\layui\images\face\44.gif" />
+    <Content Include="Login\layui\images\face\45.gif" />
+    <Content Include="Login\layui\images\face\46.gif" />
+    <Content Include="Login\layui\images\face\47.gif" />
+    <Content Include="Login\layui\images\face\48.gif" />
+    <Content Include="Login\layui\images\face\49.gif" />
+    <Content Include="Login\layui\images\face\5.gif" />
+    <Content Include="Login\layui\images\face\50.gif" />
+    <Content Include="Login\layui\images\face\51.gif" />
+    <Content Include="Login\layui\images\face\52.gif" />
+    <Content Include="Login\layui\images\face\53.gif" />
+    <Content Include="Login\layui\images\face\54.gif" />
+    <Content Include="Login\layui\images\face\55.gif" />
+    <Content Include="Login\layui\images\face\56.gif" />
+    <Content Include="Login\layui\images\face\57.gif" />
+    <Content Include="Login\layui\images\face\58.gif" />
+    <Content Include="Login\layui\images\face\59.gif" />
+    <Content Include="Login\layui\images\face\6.gif" />
+    <Content Include="Login\layui\images\face\60.gif" />
+    <Content Include="Login\layui\images\face\61.gif" />
+    <Content Include="Login\layui\images\face\62.gif" />
+    <Content Include="Login\layui\images\face\63.gif" />
+    <Content Include="Login\layui\images\face\64.gif" />
+    <Content Include="Login\layui\images\face\65.gif" />
+    <Content Include="Login\layui\images\face\66.gif" />
+    <Content Include="Login\layui\images\face\67.gif" />
+    <Content Include="Login\layui\images\face\68.gif" />
+    <Content Include="Login\layui\images\face\69.gif" />
+    <Content Include="Login\layui\images\face\7.gif" />
+    <Content Include="Login\layui\images\face\70.gif" />
+    <Content Include="Login\layui\images\face\71.gif" />
+    <Content Include="Login\layui\images\face\8.gif" />
+    <Content Include="Login\layui\images\face\9.gif" />
+    <Content Include="Login\layui\layui.all.js" />
+    <Content Include="Login\layui\layui.js" />
+    <Content Include="Login\layui\lay\modules\carousel.js" />
+    <Content Include="Login\layui\lay\modules\code.js" />
+    <Content Include="Login\layui\lay\modules\colorpicker.js" />
+    <Content Include="Login\layui\lay\modules\element.js" />
+    <Content Include="Login\layui\lay\modules\flow.js" />
+    <Content Include="Login\layui\lay\modules\form.js" />
+    <Content Include="Login\layui\lay\modules\jquery.js" />
+    <Content Include="Login\layui\lay\modules\laydate.js" />
+    <Content Include="Login\layui\lay\modules\layedit.js" />
+    <Content Include="Login\layui\lay\modules\layer.js" />
+    <Content Include="Login\layui\lay\modules\laypage.js" />
+    <Content Include="Login\layui\lay\modules\laytpl.js" />
+    <Content Include="Login\layui\lay\modules\mobile.js" />
+    <Content Include="Login\layui\lay\modules\rate.js" />
+    <Content Include="Login\layui\lay\modules\slider.js" />
+    <Content Include="Login\layui\lay\modules\table.js" />
+    <Content Include="Login\layui\lay\modules\transfer.js" />
+    <Content Include="Login\layui\lay\modules\tree.js" />
+    <Content Include="Login\layui\lay\modules\upload.js" />
+    <Content Include="Login\layui\lay\modules\util.js" />
+    <Content Include="Login\ManagerLogin.aspx" />
+    <Content Include="manager\layui\css\layui.css" />
+    <Content Include="manager\layui\css\layui.mobile.css" />
+    <Content Include="manager\layui\css\modules\code.css" />
+    <Content Include="manager\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="manager\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="manager\layui\css\modules\layer\default\icon.png" />
+    <Content Include="manager\layui\css\modules\layer\default\layer.css" />
+    <Content Include="manager\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="manager\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="manager\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="manager\layui\font\iconfont.svg" />
+    <Content Include="manager\layui\images\face\0.gif" />
+    <Content Include="manager\layui\images\face\1.gif" />
+    <Content Include="manager\layui\images\face\10.gif" />
+    <Content Include="manager\layui\images\face\11.gif" />
+    <Content Include="manager\layui\images\face\12.gif" />
+    <Content Include="manager\layui\images\face\13.gif" />
+    <Content Include="manager\layui\images\face\14.gif" />
+    <Content Include="manager\layui\images\face\15.gif" />
+    <Content Include="manager\layui\images\face\16.gif" />
+    <Content Include="manager\layui\images\face\17.gif" />
+    <Content Include="manager\layui\images\face\18.gif" />
+    <Content Include="manager\layui\images\face\19.gif" />
+    <Content Include="manager\layui\images\face\2.gif" />
+    <Content Include="manager\layui\images\face\20.gif" />
+    <Content Include="manager\layui\images\face\21.gif" />
+    <Content Include="manager\layui\images\face\22.gif" />
+    <Content Include="manager\layui\images\face\23.gif" />
+    <Content Include="manager\layui\images\face\24.gif" />
+    <Content Include="manager\layui\images\face\25.gif" />
+    <Content Include="manager\layui\images\face\26.gif" />
+    <Content Include="manager\layui\images\face\27.gif" />
+    <Content Include="manager\layui\images\face\28.gif" />
+    <Content Include="manager\layui\images\face\29.gif" />
+    <Content Include="manager\layui\images\face\3.gif" />
+    <Content Include="manager\layui\images\face\30.gif" />
+    <Content Include="manager\layui\images\face\31.gif" />
+    <Content Include="manager\layui\images\face\32.gif" />
+    <Content Include="manager\layui\images\face\33.gif" />
+    <Content Include="manager\layui\images\face\34.gif" />
+    <Content Include="manager\layui\images\face\35.gif" />
+    <Content Include="manager\layui\images\face\36.gif" />
+    <Content Include="manager\layui\images\face\37.gif" />
+    <Content Include="manager\layui\images\face\38.gif" />
+    <Content Include="manager\layui\images\face\39.gif" />
+    <Content Include="manager\layui\images\face\4.gif" />
+    <Content Include="manager\layui\images\face\40.gif" />
+    <Content Include="manager\layui\images\face\41.gif" />
+    <Content Include="manager\layui\images\face\42.gif" />
+    <Content Include="manager\layui\images\face\43.gif" />
+    <Content Include="manager\layui\images\face\44.gif" />
+    <Content Include="manager\layui\images\face\45.gif" />
+    <Content Include="manager\layui\images\face\46.gif" />
+    <Content Include="manager\layui\images\face\47.gif" />
+    <Content Include="manager\layui\images\face\48.gif" />
+    <Content Include="manager\layui\images\face\49.gif" />
+    <Content Include="manager\layui\images\face\5.gif" />
+    <Content Include="manager\layui\images\face\50.gif" />
+    <Content Include="manager\layui\images\face\51.gif" />
+    <Content Include="manager\layui\images\face\52.gif" />
+    <Content Include="manager\layui\images\face\53.gif" />
+    <Content Include="manager\layui\images\face\54.gif" />
+    <Content Include="manager\layui\images\face\55.gif" />
+    <Content Include="manager\layui\images\face\56.gif" />
+    <Content Include="manager\layui\images\face\57.gif" />
+    <Content Include="manager\layui\images\face\58.gif" />
+    <Content Include="manager\layui\images\face\59.gif" />
+    <Content Include="manager\layui\images\face\6.gif" />
+    <Content Include="manager\layui\images\face\60.gif" />
+    <Content Include="manager\layui\images\face\61.gif" />
+    <Content Include="manager\layui\images\face\62.gif" />
+    <Content Include="manager\layui\images\face\63.gif" />
+    <Content Include="manager\layui\images\face\64.gif" />
+    <Content Include="manager\layui\images\face\65.gif" />
+    <Content Include="manager\layui\images\face\66.gif" />
+    <Content Include="manager\layui\images\face\67.gif" />
+    <Content Include="manager\layui\images\face\68.gif" />
+    <Content Include="manager\layui\images\face\69.gif" />
+    <Content Include="manager\layui\images\face\7.gif" />
+    <Content Include="manager\layui\images\face\70.gif" />
+    <Content Include="manager\layui\images\face\71.gif" />
+    <Content Include="manager\layui\images\face\8.gif" />
+    <Content Include="manager\layui\images\face\9.gif" />
+    <Content Include="manager\layui\layui.all.js" />
+    <Content Include="manager\layui\layui.js" />
+    <Content Include="manager\layui\lay\modules\carousel.js" />
+    <Content Include="manager\layui\lay\modules\code.js" />
+    <Content Include="manager\layui\lay\modules\colorpicker.js" />
+    <Content Include="manager\layui\lay\modules\element.js" />
+    <Content Include="manager\layui\lay\modules\flow.js" />
+    <Content Include="manager\layui\lay\modules\form.js" />
+    <Content Include="manager\layui\lay\modules\jquery.js" />
+    <Content Include="manager\layui\lay\modules\laydate.js" />
+    <Content Include="manager\layui\lay\modules\layedit.js" />
+    <Content Include="manager\layui\lay\modules\layer.js" />
+    <Content Include="manager\layui\lay\modules\laypage.js" />
+    <Content Include="manager\layui\lay\modules\laytpl.js" />
+    <Content Include="manager\layui\lay\modules\mobile.js" />
+    <Content Include="manager\layui\lay\modules\rate.js" />
+    <Content Include="manager\layui\lay\modules\slider.js" />
+    <Content Include="manager\layui\lay\modules\table.js" />
+    <Content Include="manager\layui\lay\modules\transfer.js" />
+    <Content Include="manager\layui\lay\modules\tree.js" />
+    <Content Include="manager\layui\lay\modules\upload.js" />
+    <Content Include="manager\layui\lay\modules\util.js" />
+    <Content Include="manager\lib\build\css\app.css" />
+    <Content Include="manager\lib\build\css\doc.css" />
+    <Content Include="manager\lib\build\css\message.css" />
+    <Content Include="manager\lib\build\css\nprogress.css" />
+    <Content Include="manager\lib\build\css\themes\blue.css" />
+    <Content Include="manager\lib\build\css\themes\light.css" />
+    <Content Include="manager\lib\build\js\app.js" />
+    <Content Include="manager\lib\build\js\loader.js" />
+    <Content Include="manager\lib\build\js\message.js" />
+    <Content Include="manager\lib\build\js\navbar.js" />
+    <Content Include="manager\lib\build\js\nprogress.js" />
+    <Content Include="manager\lib\build\js\onelevel.js" />
+    <Content Include="manager\lib\build\js\pjax.js" />
+    <Content Include="manager\lib\build\js\tab.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="static\css\font.css" />
+    <Content Include="static\css\register.css" />
+    <Content Include="static\css\weadmin.css" />
+    <Content Include="static\js\admin.js" />
+    <Content Include="static\js\eleDel.js" />
+    <Content Include="static\js\extends\tabmenu.js" />
+    <Content Include="static\js\weadmin.js" />
+    <Content Include="student\course.aspx" />
+    <Content Include="student\css\xuanke.css" />
+    <Content Include="student\images\head.png" />
+    <Content Include="student\images\jwc_16.png" />
+    <Content Include="student\images\jwc_33.png" />
+    <Content Include="student\images\lm.jpg" />
+    <Content Include="student\js\json.js" />
+    <Content Include="student\layui\css\layui.css" />
+    <Content Include="student\layui\css\layui.mobile.css" />
+    <Content Include="student\layui\css\modules\code.css" />
+    <Content Include="student\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="student\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="student\layui\css\modules\layer\default\icon.png" />
+    <Content Include="student\layui\css\modules\layer\default\layer.css" />
+    <Content Include="student\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="student\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="student\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="student\layui\font\iconfont.svg" />
+    <Content Include="student\layui\images\face\0.gif" />
+    <Content Include="student\layui\images\face\1.gif" />
+    <Content Include="student\layui\images\face\10.gif" />
+    <Content Include="student\layui\images\face\11.gif" />
+    <Content Include="student\layui\images\face\12.gif" />
+    <Content Include="student\layui\images\face\13.gif" />
+    <Content Include="student\layui\images\face\14.gif" />
+    <Content Include="student\layui\images\face\15.gif" />
+    <Content Include="student\layui\images\face\16.gif" />
+    <Content Include="student\layui\images\face\17.gif" />
+    <Content Include="student\layui\images\face\18.gif" />
+    <Content Include="student\layui\images\face\19.gif" />
+    <Content Include="student\layui\images\face\2.gif" />
+    <Content Include="student\layui\images\face\20.gif" />
+    <Content Include="student\layui\images\face\21.gif" />
+    <Content Include="student\layui\images\face\22.gif" />
+    <Content Include="student\layui\images\face\23.gif" />
+    <Content Include="student\layui\images\face\24.gif" />
+    <Content Include="student\layui\images\face\25.gif" />
+    <Content Include="student\layui\images\face\26.gif" />
+    <Content Include="student\layui\images\face\27.gif" />
+    <Content Include="student\layui\images\face\28.gif" />
+    <Content Include="student\layui\images\face\29.gif" />
+    <Content Include="student\layui\images\face\3.gif" />
+    <Content Include="student\layui\images\face\30.gif" />
+    <Content Include="student\layui\images\face\31.gif" />
+    <Content Include="student\layui\images\face\32.gif" />
+    <Content Include="student\layui\images\face\33.gif" />
+    <Content Include="student\layui\images\face\34.gif" />
+    <Content Include="student\layui\images\face\35.gif" />
+    <Content Include="student\layui\images\face\36.gif" />
+    <Content Include="student\layui\images\face\37.gif" />
+    <Content Include="student\layui\images\face\38.gif" />
+    <Content Include="student\layui\images\face\39.gif" />
+    <Content Include="student\layui\images\face\4.gif" />
+    <Content Include="student\layui\images\face\40.gif" />
+    <Content Include="student\layui\images\face\41.gif" />
+    <Content Include="student\layui\images\face\42.gif" />
+    <Content Include="student\layui\images\face\43.gif" />
+    <Content Include="student\layui\images\face\44.gif" />
+    <Content Include="student\layui\images\face\45.gif" />
+    <Content Include="student\layui\images\face\46.gif" />
+    <Content Include="student\layui\images\face\47.gif" />
+    <Content Include="student\layui\images\face\48.gif" />
+    <Content Include="student\layui\images\face\49.gif" />
+    <Content Include="student\layui\images\face\5.gif" />
+    <Content Include="student\layui\images\face\50.gif" />
+    <Content Include="student\layui\images\face\51.gif" />
+    <Content Include="student\layui\images\face\52.gif" />
+    <Content Include="student\layui\images\face\53.gif" />
+    <Content Include="student\layui\images\face\54.gif" />
+    <Content Include="student\layui\images\face\55.gif" />
+    <Content Include="student\layui\images\face\56.gif" />
+    <Content Include="student\layui\images\face\57.gif" />
+    <Content Include="student\layui\images\face\58.gif" />
+    <Content Include="student\layui\images\face\59.gif" />
+    <Content Include="student\layui\images\face\6.gif" />
+    <Content Include="student\layui\images\face\60.gif" />
+    <Content Include="student\layui\images\face\61.gif" />
+    <Content Include="student\layui\images\face\62.gif" />
+    <Content Include="student\layui\images\face\63.gif" />
+    <Content Include="student\layui\images\face\64.gif" />
+    <Content Include="student\layui\images\face\65.gif" />
+    <Content Include="student\layui\images\face\66.gif" />
+    <Content Include="student\layui\images\face\67.gif" />
+    <Content Include="student\layui\images\face\68.gif" />
+    <Content Include="student\layui\images\face\69.gif" />
+    <Content Include="student\layui\images\face\7.gif" />
+    <Content Include="student\layui\images\face\70.gif" />
+    <Content Include="student\layui\images\face\71.gif" />
+    <Content Include="student\layui\images\face\8.gif" />
+    <Content Include="student\layui\images\face\9.gif" />
+    <Content Include="student\layui\layui-v2.5.6\免责声明.txt" />
+    <Content Include="student\layui\layui.all.js" />
+    <Content Include="student\layui\layui.js" />
+    <Content Include="student\layui\lay\modules\carousel.js" />
+    <Content Include="student\layui\lay\modules\code.js" />
+    <Content Include="student\layui\lay\modules\colorpicker.js" />
+    <Content Include="student\layui\lay\modules\element.js" />
+    <Content Include="student\layui\lay\modules\flow.js" />
+    <Content Include="student\layui\lay\modules\form.js" />
+    <Content Include="student\layui\lay\modules\jquery.js" />
+    <Content Include="student\layui\lay\modules\laydate.js" />
+    <Content Include="student\layui\lay\modules\layedit.js" />
+    <Content Include="student\layui\lay\modules\layer.js" />
+    <Content Include="student\layui\lay\modules\laypage.js" />
+    <Content Include="student\layui\lay\modules\laytpl.js" />
+    <Content Include="student\layui\lay\modules\mobile.js" />
+    <Content Include="student\layui\lay\modules\rate.js" />
+    <Content Include="student\layui\lay\modules\slider.js" />
+    <Content Include="student\layui\lay\modules\table.js" />
+    <Content Include="student\layui\lay\modules\transfer.js" />
+    <Content Include="student\layui\lay\modules\tree.js" />
+    <Content Include="student\layui\lay\modules\upload.js" />
+    <Content Include="student\layui\lay\modules\util.js" />
+    <Content Include="student\tuike.aspx" />
+    <Content Include="student\xuanke.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\ManagerLogin.aspx.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\ManagerLogin.aspx.designer.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main2.aspx.cs">
+      <DependentUpon>main2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main2.aspx.designer.cs">
+      <DependentUpon>main2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\Course_Info.aspx.cs">
+      <DependentUpon>Course_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\Course_Info.aspx.designer.cs">
+      <DependentUpon>Course_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_course.ashx.cs">
+      <DependentUpon>add_course.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_course.aspx.cs">
+      <DependentUpon>add_course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\add_course.aspx.designer.cs">
+      <DependentUpon>add_course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_student.ashx.cs">
+      <DependentUpon>add_student.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_student.aspx.cs">
+      <DependentUpon>add_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\add_student.aspx.designer.cs">
+      <DependentUpon>add_student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_teacher.ashx.cs">
+      <DependentUpon>add_teacher.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\add_teacher.aspx.cs">
+      <DependentUpon>add_teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\add_teacher.aspx.designer.cs">
+      <DependentUpon>add_teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\all_courses.aspx.cs">
+      <DependentUpon>all_courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\all_courses.aspx.designer.cs">
+      <DependentUpon>all_courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\course_manager.aspx.cs">
+      <DependentUpon>course_manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\course_manager.aspx.designer.cs">
+      <DependentUpon>course_manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_course.ashx.cs">
+      <DependentUpon>del_course.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_course_many.ashx.cs">
+      <DependentUpon>del_course_many.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_student.ashx.cs">
+      <DependentUpon>del_student.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_student_many.ashx.cs">
+      <DependentUpon>del_student_many.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_teacher.ashx.cs">
+      <DependentUpon>del_teacher.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\del_teacher_many.ashx.cs">
+      <DependentUpon>del_teacher_many.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\detail_course.aspx.cs">
+      <DependentUpon>detail_course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\detail_course.aspx.designer.cs">
+      <DependentUpon>detail_course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\detail_student.aspx.cs">
+      <DependentUpon>detail_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\detail_student.aspx.designer.cs">
+      <DependentUpon>detail_student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\detail_teacher.aspx.cs">
+      <DependentUpon>detail_teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\detail_teacher.aspx.designer.cs">
+      <DependentUpon>detail_teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\distribute.aspx.cs">
+      <DependentUpon>distribute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\distribute.aspx.designer.cs">
+      <DependentUpon>distribute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\distribute_course.ashx.cs">
+      <DependentUpon>distribute_course.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\distribute_course.aspx.cs">
+      <DependentUpon>distribute_course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\distribute_course.aspx.designer.cs">
+      <DependentUpon>distribute_course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_course.ashx.cs">
+      <DependentUpon>edit_course.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_course.aspx.cs">
+      <DependentUpon>edit_course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\edit_course.aspx.designer.cs">
+      <DependentUpon>edit_course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\Edit_Personal_Information.aspx.cs">
+      <DependentUpon>Edit_Personal_Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\Edit_Personal_Information.aspx.designer.cs">
+      <DependentUpon>Edit_Personal_Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_student.ashx.cs">
+      <DependentUpon>edit_student.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_student.aspx.cs">
+      <DependentUpon>edit_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\edit_student.aspx.designer.cs">
+      <DependentUpon>edit_student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_teacher.ashx.cs">
+      <DependentUpon>edit_teacher.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\edit_teacher.aspx.cs">
+      <DependentUpon>edit_teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\edit_teacher.aspx.designer.cs">
+      <DependentUpon>edit_teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\exit.ashx.cs">
+      <DependentUpon>exit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\Manager.aspx.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\Manager.aspx.designer.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\save_switch.ashx.cs">
+      <DependentUpon>save_switch.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\system_switch.aspx.cs">
+      <DependentUpon>system_switch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\system_switch.aspx.designer.cs">
+      <DependentUpon>system_switch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\Student_Manage.aspx.cs">
+      <DependentUpon>Student_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\Student_Manage.aspx.designer.cs">
+      <DependentUpon>Student_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\teacher_manage.aspx.cs">
+      <DependentUpon>teacher_manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\teacher_manage.aspx.designer.cs">
+      <DependentUpon>teacher_manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\teaching.aspx.cs">
+      <DependentUpon>teaching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\teaching.aspx.designer.cs">
+      <DependentUpon>teaching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="student\course.aspx.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\course.aspx.designer.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\tuike.aspx.cs">
+      <DependentUpon>tuike.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\tuike.aspx.designer.cs">
+      <DependentUpon>tuike.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\xuanke.aspx.cs">
+      <DependentUpon>xuanke.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\xuanke.aspx.designer.cs">
+      <DependentUpon>xuanke.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="teacher\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="static\css\weadmin.less" />
+    <Content Include="Scripts\layui\font\iconfont.eot" />
+    <Content Include="Scripts\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\layui\font\iconfont.woff" />
+    <Content Include="student\jscript\user.json" />
+    <Content Include="student\layui\font\iconfont.eot" />
+    <Content Include="student\layui\font\iconfont.ttf" />
+    <Content Include="student\layui\font\iconfont.woff" />
+    <Content Include="student\layui\font\iconfont.woff2" />
+    <Content Include="student\layui\layui-v2.5.6\文档与示例\Gitee 码云.url" />
+    <Content Include="student\layui\layui-v2.5.6\文档与示例\GitHub.url" />
+    <Content Include="student\layui\layui-v2.5.6\文档与示例\在线示例.url" />
+    <Content Include="student\layui\layui-v2.5.6\文档与示例\快速上手.url" />
+    <Content Include="student\layui\layui-v2.5.6\更新日志.url" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{95ec9564-44bc-4b0f-b0c9-7bd0e6f12798}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{5ac07812-dc15-402f-a0ff-9ff6348e5ef0}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{31B0E99F-7C06-4B78-B442-7B1B6288BCE1}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{391f2f1a-3a6a-45ad-91b6-f8875254ef03}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10350</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10350/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.Master.cs" Inherits="学籍成绩管理系统.Manager" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Login/layui/css/layui.css" rel="stylesheet" />
+    <script type="text/javascript" src='<%=ResolveUrl("manager/layui/layui.js")%>'></script>
+</head>
+<body class="layui-layout-body" style="overflow: hidden">
+    <form id="form1" runat="server">
+
+
+        <div class="layui-layout layui-layout-admin">
+            <div class="layui-header ">
+                <div class="layui-logo">湖北大学学生成绩管理系统</div>
+                <ul class="layui-nav layui-layout-right layui-bg-green">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <img src="~/manager/imgs/logo.png" class="layui-nav-img" runat="server" />
+                            非常6+1
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">基本资料</a></dd>
+                            <dd><a href="">安全设置</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="../Login/ManagerLogin.aspx">退出</a></li>
+                </ul>
+            </div>
+
+            <div class="layui-side layui-bg-black">
+                <div class="layui-side-scroll">
+                    <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;">学生</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">选课</a></dd>
+                                <dd><a href="javascript:;">退课</a></dd>
+                                <dd><a href="javascript:;">查看所有课程</a></dd>
+                                <dd><a href="javascript:;">修改个人信息</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- 主体部分   -->
+
+            <div class="layui-body">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="layui-footer">
+                <!-- 底部固定区域 -->
+                super.six.plus.one.com - 非常六加一团队制作
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

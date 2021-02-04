@@ -1,0 +1,12 @@
+F:\vscode\vs\学籍成绩管理系统\Model\bin\Debug\Model.dll
+F:\vscode\vs\学籍成绩管理系统\Model\bin\Debug\Model.pdb
+F:\vscode\vs\学籍成绩管理系统\Model\obj\Debug\Model.csprojAssemblyReference.cache
+F:\vscode\vs\学籍成绩管理系统\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+F:\vscode\vs\学籍成绩管理系统\Model\obj\Debug\Model.dll
+F:\vscode\vs\学籍成绩管理系统\Model\obj\Debug\Model.pdb
+D:\大三上\asp.net\学籍成绩管理系统\Model\bin\Debug\Model.dll
+D:\大三上\asp.net\学籍成绩管理系统\Model\bin\Debug\Model.pdb
+D:\大三上\asp.net\学籍成绩管理系统\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\大三上\asp.net\学籍成绩管理系统\Model\obj\Debug\Model.dll
+D:\大三上\asp.net\学籍成绩管理系统\Model\obj\Debug\Model.pdb
+D:\大三上\asp.net\学籍成绩管理系统\Model\obj\Debug\Model.csprojAssemblyReference.cache

@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Manager.master.cs" Inherits="学籍成绩管理系统.Manager1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+<%--    <link href="Login/layui/css/layui.css" rel="stylesheet" />--%>
+    <link href="manager/layui/dist/layui.css" rel="stylesheet"/>
+    <script type="text/javascript" src='<%=ResolveUrl("manager/layui/dist/layui.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveUrl("manager/layui/layui.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveUrl("Scripts/jquery-3.4.1.min.js")%>'></script>
+
+<%--    <script type="text/javascript">
+        layui.use('element', function () {
+            var $ = layui.jquery
+                , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+            //触发事件
+            var active = {
+                tabAdd: function () {
+                    //新增一个Tab项
+                    element.tabAdd('demo', {
+                        title: '选课' //用于演示
+                        , content: 'sdfsdfsdf'
+                        , id: 22 //实际使用一般是规定好的id，这里以时间戳模拟下
+                    })
+                }
+            };
+            $('.site-demo-active').on('click', function () {
+                var othis = $(this), type = othis.data('type');
+                active[type] ? active[type].call(this, othis) : '';
+            });
+        });
+    </script>--%>
+
+</head>
+<body class="layui-layout-body" style="overflow: hidden">
+    <form id="form1" runat="server">
+        <div class="layui-layout layui-layout-admin">
+            <div class="layui-header ">
+                <div class="layui-logo">湖北大学学生成绩管理系统</div>
+                <ul class="layui-nav layui-layout-right layui-bg-green">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <img src="~/manager/imgs/logo.png" class="layui-nav-img" runat="server" />
+                            非常6+1
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">基本资料</a></dd>
+                            <dd><a href="">安全设置</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="../Login/ManagerLogin.aspx">退出</a></li>
+                </ul>
+            </div>
+
+            <div class="layui-side layui-bg-black">
+                <div class="layui-side-scroll">
+                    <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;">用户管理</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">修改个人信息</a></dd>
+                                <dd><a href="javascript:;">修改老师信息</a></dd>
+                                <dd><a href="javascript:;">修改学生信息</a></dd>
+                                <dd><a href="javascript:;">设置系统开关</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;">课程管理</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">修改课程信息</a></dd>
+                                <dd><a href="javascript:;">分配课程</a></dd>
+                                <dd><a href="javascript:;">统计</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- 主体部分   -->
+
+            <div class="layui-body">
+<%--                <div class="layui-tab" lay-filter="demo" lay-allowclose="true">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this" lay-id="11">网站设置</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <iframe src="http://www.baidu.com" frameborder="0" width="1500" height="800" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+
+                    </div>
+                </div>--%>
+
+                <asp:ContentPlaceHolder ID="ManagerTest" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="layui-footer">
+                <!-- 底部固定区域 -->
+                super.six.plus.one.com - 非常六加一团队制作
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿.header02 {
+    background: url(https://p.ananas.chaoxing.com/star3/1920_296/3760954c22ccf4ee1fff84999beaff15.png) no-repeat top center
+}
+
+.wrap1100 {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.nav {
+    height: 43px;
+    background: #000;
+}
+
+.logo {
+    height: 191px;
+    padding-top: 60px;
+}
+
+a {
+    color: #202020;
+    text-decoration: none;
+}
+
+img {
+    /* border: none; */
+}
+
+body {
+    font: 12px/1.5 MIcrosoft YaHei,Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.menu {
+    /* width: 460px; */
+    border-left: solid 1px #4d4d4d;
+}
+
+    .menu li {
+        float: left;
+        border-right: solid 1px #4d4d4d;
+        position: relative;
+    }
+
+        .menu li a {
+            float: left;
+            padding: 0 20px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 43px;
+        }
+
+.wrap1100 {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+
+
+.lierlf {
+    width: 250px;
+    float: left;
+    height: auto;
+}
+
+.kwlm {
+    width: 250px;
+    height: 80px;
+    background: url(../images/lm.jpg) no-repeat;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 80px;
+    text-indent: 30px;
+    margin-top:10px;
+}
+
+.libql {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    background: #1e6f46;
+    color: #fff;
+    line-height: 60px;
+    text-indent: 30px;
+}
+
+.libq {
+    width: 100%;
+    height: 59px;
+    border-bottom: 1px solid #1e6f46;
+    font-size: 16px;
+    color: #fff;
+    line-height: 59px;
+    background: #fff;
+    text-indent: 30px;
+}
+
+
+    .libq a {
+        color: #000;
+        display: block;
+    }
+
+.layui-table-cell {
+    height: 50px;
+    line-height: 50px;
+}
+
+.bannbot {
+    height: 100px;
+    background: url(images/jwc_33.png) center no-repeat #0e5e2e;
+    min-width: 1200px;
+}
+
+.foot {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    font-size: 18px;
+}
+.l_foot {
+    width: 250px;
+    height: 400px;
+    background: url(../images/jwc_16.png) no-repeat;
+    background-size: 100% 100%;
+}
+.rg510dde {
+   height:100%;
+   width:100%;
+    margin: 0 auto;
+}
+    .rg510dde h2 {
+        font-size: 18px;
+        line-height: 35px;
+        color: #fff;
+        border-bottom: 1px solid #666;
+    }
+        .rg510dde h2 a {
+            color: #fff;
+        }
+    .rg510dde p {
+        line-height: 30px;
+        font-size: 14px;
+        color: #fff;
+        text-align:center;
+    }
+        .rg510dde p a {
+            color: #fff;
+        }
